@@ -3,7 +3,7 @@
   --accent-color-trans: color-mix(in srgb, var(--accent-color) 5%, transparent 0%);
   --bold-color: #9b9b9b;
   --italic-color: #b3b3b3;
-  --text-highlight-bg: rgb(141, 139, 139);
+  --text-highlight-bg: color-mix(in srgb, var(--accent-color) 25%, transparent 0%);
   --radius-s: 5px;
   --radius-m: 0px;
   --radius-l: 0px;
@@ -26,11 +26,23 @@
   --scrollbar-bg: transparent;
   --scrollbar-thumb-bg: transparent;
   --scrollbar-active-thumb-bg: rgba(255, 255, 255, 0.082);
-  --header-height: 35px;
+  --header-height: 40px;
   --pomodoro-timer-elapsed-color: white;
   --pomodoro-timer-color: var(--bold-color);
   --pomodoro-timer-text-color: white;
   --pomodoro-timer-dot-color: white;
+}
+
+.status-bar {
+  opacity: 0;
+  transition-duration: 0.3s;
+  background-color: var(--background-primary);
+  border: none;
+  border-radius: 10px;
+}
+
+.status-bar:hover {
+  opacity: 1;
 }
 
 .cm-content .cm-active {
@@ -409,29 +421,3 @@ body:not(.native-scrollbars) .museifu-banner {
 .markdown-source-view.is-live-preview img[alt*="museifu-banner"] {
   opacity: 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* GRADIENT CANVAS */
-
-
-/* 
-author: kneecaps
-source: https://discord.com/channels/686053708261228577/702656734631821413/1095868229634773143
-*/
