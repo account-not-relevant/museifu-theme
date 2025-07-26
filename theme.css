@@ -1,0 +1,437 @@
+:root body {
+  --accent-color: var(--bold-color);
+  --accent-color-trans: color-mix(in srgb, var(--accent-color) 5%, transparent 0%);
+  --bold-color: #9b9b9b;
+  --italic-color: #b3b3b3;
+  --text-highlight-bg: rgb(141, 139, 139);
+  --radius-s: 5px;
+  --radius-m: 0px;
+  --radius-l: 0px;
+  --input-radius: 0px;
+  --tab-radius-active: 0px;
+  --checkbox-radius: 5px;
+  --toggle-radius: 0px;
+  --toggle-thumb-radius: 0px;
+  --slider-thumb-radius: 0px;
+  --dark-gray: rgb(37, 37, 37);
+  --dark-red: rgb(124, 0, 0);
+
+  --background-primary: rgb(22, 22, 22);
+  --museifu-sidebars-bc-color: var(--accent-color-trans); /* options: "rgb(41, 41, 41)", "accent-color-trans" or "transparent" */
+
+  --background-secondary: var(--background-primary); /* options: primary */
+  --background-secondary-alt: var(--background-primary);
+  --border-width: 7px;
+  --status-bar-background: var(--dark-gray);
+  --scrollbar-bg: transparent;
+  --scrollbar-thumb-bg: transparent;
+  --scrollbar-active-thumb-bg: rgba(255, 255, 255, 0.082);
+  --header-height: 35px;
+  --pomodoro-timer-elapsed-color: white;
+  --pomodoro-timer-color: var(--bold-color);
+  --pomodoro-timer-text-color: white;
+  --pomodoro-timer-dot-color: white;
+}
+
+.cm-content .cm-active {
+  background-color: var(--accent-color-trans);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 3px;
+}
+
+.workspace-tab-header.is-active::before,
+.workspace-tab-header.is-active::after {
+  display: none;
+}
+
+svg * {
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+  rx: 0;
+  ry: 0;
+}
+
+.workspace-split {
+  /* little space for sidebars */
+  margin: 0px 10px;
+  background-color: transparent;
+}
+
+.mod-vertical {
+  /* if you have more than one tab open, the space that separates them */
+  gap: 20px;
+}
+
+.workspace-leaf-resize-handle {
+  -webkit-app-region: no-drag;
+  background-color: transparent;
+  position: absolute;
+  border-top: 0;
+  border-color: transparent;
+}
+
+.view-content {
+  /* background of sidebars, but view-content is everything */
+  background-color: var(--museifu-sidebars-bc-color);
+  border-radius: 15px;
+}
+
+.menu {
+  padding: var(--size-2-1);
+}
+
+.menu-item {
+  padding: var(--size-4-1) var(--size-4-2);
+}
+
+.menu-separator {
+  margin: var(--size-2-1) calc(var(--size-2-1) * -1);
+}
+
+.markdown-source-view,
+.markdown-preview-view {
+  /* background colors */
+  background-color: transparent;
+}
+
+.workspace-tab-header-container,
+.titlebar-button {
+  background-color: var(--background-primary);
+}
+
+.workspace-sidedock-vault-profile,
+.nav-header {
+  transition-duration: 0.5s;
+  opacity: 0;
+  max-height: 5px;
+  background-color: var(--background-primary);
+  border-radius: 5px;
+  border: none;
+}
+
+.workspace-sidedock-vault-profile:hover,
+.nav-header:hover {
+  opacity: 1;
+  transition-duration: 0.5s;
+  max-height: 50px;
+  background-color: var(--background-primary);
+  border-radius: 5px;
+}
+
+.mod-sidedock {
+  /* color from some plugin's texts on the sidebar, mod-horizontal seems to do the same thing */
+  color: var(--bold-color);
+}
+
+.workspace .is-left-sidedock-open .is-right-sidedock-open {
+  background-color: blue;
+  display: none;
+}
+
+.mod-left-split {
+  background-color: transparent;
+}
+
+.fc-scrollgrid .fc-scrollgrid-liquid {}
+
+.fc-toolbar-chunk .fc-toolbar-title {
+  font-size: 20px;
+}
+
+
+.fc-header-toolbar,
+.fc-toolbar,
+.fc-toolbar-ltr {
+  display: flex;
+}
+
+.fc-theme-standard .fc-scrollgrid {
+  border: none;
+}
+
+.fc-theme-standard td,
+.fc-theme-standard th {
+  border: none;
+  border-bottom: none;
+}
+
+/* the little lines from the calendar plugin */
+td .fc-timegrid-slot,
+td .fc-timegrid-slot-label,
+td .fc-scrollgrid-shrink,
+td .fc-timegrid-slot-label-frame,
+td .fc-scrollgrid-shrink-frame {
+  border: 1px dotted transparent;
+  border-top: 1px solid rgba(46, 46, 46, 0.219);
+}
+
+.fc-col-header-cell-cushion {
+  color: var(--bold-color);
+}
+
+.pomodoro-tasks-header-title {
+  color: var(--bold-color);
+}
+
+.titlebar-inner {
+  min-height: 50px;
+}
+
+.modal *,
+.modal .mod-settings,
+.mod-sidebar-layout {
+  border-radius: 5px;
+}
+
+.callout {
+  transition-duration: 1s;
+  border: 3px solid color-mix(in srgb, rgb(var(--callout-color)) 30%, transparent 30%);
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+}
+
+.view-header-title-container.mod-at-start {
+  /* note title before hover */
+  background-color: rgb(78, 78, 78);
+  opacity: 0.5;
+  transition-duration: 0.3s;
+  border-top: none;
+  margin: 4px 50px;
+  border-radius: 5px;
+}
+
+.view-header-title-container.mod-at-start::after {
+  /* weird ass fade on the note title */
+  opacity: 0;
+}
+
+.view-header-title-container.mod-at-start:hover {
+  /* note title on hover */
+  opacity: 1;
+  transition-duration: 0.3s;
+  background-color: rgb(80, 78, 78);
+}
+
+/* elements like the tabs */
+.workspace-tab-header-inner {
+  border: none;
+  background-color: var(--accent-color-trans);
+}
+
+.workspace-tab-header-inner:hover {
+  /* color of the title of the tab you're hovering */
+  color: var(--bold-color);
+}
+
+.workspace-tab-header-container {
+  height: 20px;
+  min-height: 20px;
+  opacity: 0;
+  background-color: var(--background-primary);
+  transition-duration: 0.5s;
+  border: none;
+  margin-top: 1px;
+  align-items: center;
+}
+
+.workspace-tab-header-container:hover {
+  height: 50px;
+  min-height: 50px;
+  opacity: 1;
+}
+
+/* funny: if the left sidebar is open, it defines the container you have item icons (like graph in my case)
+if it's closed, it defines the tab container from the tabs on the left (considering you have some at the right)
+that caused a silly bug, so I removed the "min-height"
+
+maybe happens based on where the "Collapse" button, to hide or show sidebars, is located
+*/
+
+
+
+
+/*
+
++   MUSEIFU JUSTIFY & CENTER   +
+
+*/
+
+.museifu-justify p,
+.museifu-justify h1,
+.museifu-justify h2,
+.museifu-justify h3,
+.museifu-justify h4,
+.museifu-justify h5,
+.museifu-justify h6 {
+  text-align: justify;
+}
+
+
+
+.museifu-centralize p,
+.museifu-centralize h1,
+.museifu-centralize h2,
+.museifu-centralize h3,
+.museifu-centralize h4,
+.museifu-centralize h5,
+.museifu-centralize h6 {
+  text-align: center;
+}
+
+
+
+.museifu-justicenter .markdown-preview-section {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 900px;
+  padding: 0 20px;
+}
+
+.museifu-justicenter p,
+.museifu-justicenter h1,
+.museifu-justicenter h2,
+.museifu-justicenter h3,
+.museifu-justicenter h4,
+.museifu-justicenter h5,
+.museifu-justicenter h6 {
+  text-align: justify;
+}
+
+.museifu-justicenter img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.museifu-limit .markdown-preview-section {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 900px;
+  padding: 0 20px;
+}
+
+.museifu-limit img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+
+/*
+
++   MUSEIFU BANNERS   +
+
+I got the base for the Museifu Banners feature from Bluemoondragon07, who got the base
+for his code from efemkay on the Obsidian Forum
+Bluemoondragon07 version has a bit more features, which I removed, since I was
+only interested on adapting the banner feature for my theme
+
+Original forum post: https://forum.obsidian.md/t/css-how-to-style-the-first-image-in-a-note/52839/
+Efemkay's forum profile: https://forum.obsidian.md/u/efemkay/summary
+Bluemoondragon07's original version: https://github.com/Bluemoondragon07/Obsidian-amazing-snippets/blob/main/Fun%20Mini%20Snippets/CSS%20banners%2C%20icons%2C%20%26%20More.md
+
+Thanks Efemkay and Bluemoondragon07 for writing and testing the base I've worked upon
+
+Museifu's Creator GitHub: https://github.com/account-not-relevant
+
+*/
+
+
+/* make the div (in LP) containing the image doesn't control the css box-sizing */
+.internal-embed.image-embed[alt*="museifu-banner"] {
+  display: contents;
+}
+
+.museifu-banner img[alt*="museifu-banner"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  object-fit: cover;
+  object-position: 50% 50%;
+  overflow: hidden;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* add option to adjust vertical position by adding the alt metadata "higher" or "lower" */
+.museifu-banner img[alt*="museifu-banner"][alt*="higher"] {
+  object-position: 50% 30%;
+}
+
+.museifu-banner img[alt*="museifu-banner"][alt*="lower"] {
+  object-position: 50% 70%;
+}
+
+/* note title placements, but changed nothing on Museifu */
+.banner-title .museifu-banner .inline-title {}
+
+.museifu-banner .mod-header,
+.banner .mod-header {
+  position: relative;
+  padding-top: 200px;
+  /* should keep the same as the height in .museifu-banner img above*/
+  z-index: 1;
+}
+
+.museifu-banner img[alt*="museifu-banner-fade"] {
+  mask-image: linear-gradient(to bottom, rgb(0, 0, 0) 65%, rgba(0, 0, 0, 0));
+}
+
+.banner-title .museifu-banner img[alt*="museifu-banner"] {
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+/* hide scrollbars and remove their space */
+body:not(.native-scrollbars) ::-webkit-scrollbar .museifu-banner {
+  width: 0px;
+  height: 0px;
+}
+
+body:not(.native-scrollbars) .museifu-banner {
+  scrollbar-width: none;
+}
+
+body:not(.native-scrollbars) .museifu-banner {
+  -ms-overflow-style: none;
+}
+
+/* hide banner when editing */
+.markdown-source-view.is-live-preview img[alt*="museifu-banner"] {
+  opacity: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* GRADIENT CANVAS */
+
+
+/* 
+author: kneecaps
+source: https://discord.com/channels/686053708261228577/702656734631821413/1095868229634773143
+*/
