@@ -1,9 +1,18 @@
 :root body {
   --accent-color: var(--bold-color);
   --accent-color-trans: color-mix(in srgb, var(--accent-color) 5%, transparent 0%);
+  --dark-gray: rgb(37, 37, 37);
+  --dark-red: rgb(124, 0, 0);
   --bold-color: #9b9b9b;
   --italic-color: #b3b3b3;
   --text-highlight-bg: color-mix(in srgb, var(--accent-color) 25%, transparent 0%);
+  --background-primary: rgb(22, 22, 22);
+  --museifu-sidebars-bc-color: var(--accent-color-trans);
+  /* options: "rgb(41, 41, 41)", "accent-color-trans" or "transparent" */
+  --background-secondary: var(--background-primary);
+  /* options: primary */
+  --background-secondary-alt: var(--background-primary);
+
   --radius-s: 5px;
   --radius-m: 0px;
   --radius-l: 0px;
@@ -13,20 +22,13 @@
   --toggle-radius: 0px;
   --toggle-thumb-radius: 0px;
   --slider-thumb-radius: 0px;
-  --dark-gray: rgb(37, 37, 37);
-  --dark-red: rgb(124, 0, 0);
-
-  --background-primary: rgb(22, 22, 22);
-  --museifu-sidebars-bc-color: var(--accent-color-trans); /* options: "rgb(41, 41, 41)", "accent-color-trans" or "transparent" */
-
-  --background-secondary: var(--background-primary); /* options: primary */
-  --background-secondary-alt: var(--background-primary);
   --border-width: 7px;
-  --status-bar-background: var(--dark-gray);
+  /* --status-bar-background: var(--dark-gray); */
   --scrollbar-bg: transparent;
   --scrollbar-thumb-bg: transparent;
   --scrollbar-active-thumb-bg: rgba(255, 255, 255, 0.082);
   --header-height: 40px;
+
   --pomodoro-timer-elapsed-color: white;
   --pomodoro-timer-color: var(--bold-color);
   --pomodoro-timer-text-color: white;
@@ -109,6 +111,9 @@ svg * {
 .workspace-tab-header-container,
 .titlebar-button {
   background-color: var(--background-primary);
+}
+
+.workspace-tab-header-container-inner {
 }
 
 .workspace-sidedock-vault-profile,
@@ -225,10 +230,24 @@ td .fc-scrollgrid-shrink-frame {
   background-color: rgb(80, 78, 78);
 }
 
+.workspace-tab-header {
+  height: 100px;
+  border: none;
+}
+
+.workspace-tab-header::after {
+  color: red;
+  background-color: red;
+}
+
+.workspace-tab-header::before {
+  color: green;
+  background-color: green;
+}
+
 /* elements like the tabs */
 .workspace-tab-header-inner {
   border: none;
-  background-color: var(--accent-color-trans);
 }
 
 .workspace-tab-header-inner:hover {
@@ -251,14 +270,11 @@ td .fc-scrollgrid-shrink-frame {
   height: 50px;
   min-height: 50px;
   opacity: 1;
-}
+} 
 
-/* funny: if the left sidebar is open, it defines the container you have item icons (like graph in my case)
-if it's closed, it defines the tab container from the tabs on the left (considering you have some at the right)
-that caused a silly bug, so I removed the "min-height"
 
-maybe happens based on where the "Collapse" button, to hide or show sidebars, is located
-*/
+
+
 
 
 
@@ -420,4 +436,13 @@ body:not(.native-scrollbars) .museifu-banner {
 /* hide banner when editing */
 .markdown-source-view.is-live-preview img[alt*="museifu-banner"] {
   opacity: 0;
+}
+
+
+
+
+
+body {
+  --canvas-background: var(--background-primary);
+  --canvas-dot-pattern: none;
 }
