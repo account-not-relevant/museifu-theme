@@ -2,7 +2,5 @@
 
 ## Work in progress.
 The theme is "incomplete" without the following snippets:
-- Museifu Custom Backgrounds
-- Museifu Custom Tasks
-
-Until I put them on GitHub too, you can get the Custom Backgrounds one [here](https://gofile.io/d/ntkuOe).
+- [Museifu Custom Backgrounds](https://github.com/account-not-relevant/museifu-custom-backgrounds)
+- Museifu Custom Tasks (still organizing)
