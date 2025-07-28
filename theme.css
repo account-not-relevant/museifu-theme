@@ -29,6 +29,8 @@
   --scrollbar-active-thumb-bg: rgba(255, 255, 255, 0.082);
   --header-height: 40px;
 
+  --large-kanban-width: 400px;
+
   --pomodoro-timer-elapsed-color: white;
   --pomodoro-timer-color: var(--bold-color);
   --pomodoro-timer-text-color: white;
@@ -197,7 +199,8 @@ td .fc-scrollgrid-shrink-frame {
 .modal *,
 .modal .mod-settings,
 .mod-sidebar-layout {
-  border-radius: 5px;
+  border: none;
+  background-color: var(--page-museifu-dark);
 }
 
 .callout {
@@ -438,9 +441,36 @@ body:not(.native-scrollbars) .museifu-banner {
   opacity: 0;
 }
 
+/* kanban customization */
 
+.kanban-plugin__item-title-wrapper,
+.kanban-plugin__lane-header-wrapper,
+.kanban-plugin__item-button-wrapper {
+  border: none;
+}
 
+.kanban-plugin__item {
+  border: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--accent-color) 40%, transparent 0%);
+  padding: 3px 0;
+  --link-unresolved-color: var(--pen-red);
+}
 
+.kanban-plugin__item-content-wrapper, 
+.kanban-plugin__item-title-wrapper {
+  background-color: transparent;
+}
+
+.kanban-plugin__lane {
+  background-color: var(--accent-color-trans);
+  border: none;
+}
+
+.museifu-large-kanban .kanban-plugin__lane-wrapper {
+  width: var(--large-kanban-width);
+}
+
+/* canvas customization */
 
 body {
   --canvas-background: var(--background-primary);
