@@ -30,6 +30,7 @@
   --header-height: 40px;
 
   --large-kanban-width: 400px;
+  --bullet-point-color: var(--accent-color);
 
   --pomodoro-timer-elapsed-color: white;
   --pomodoro-timer-color: var(--bold-color);
@@ -402,9 +403,6 @@ Museifu's Creator GitHub: https://github.com/account-not-relevant
   object-position: 50% 70%;
 }
 
-/* note title placements, but changed nothing on Museifu */
-.banner-title .museifu-banner .inline-title {}
-
 .museifu-banner .mod-header,
 .banner .mod-header {
   position: relative;
@@ -428,6 +426,11 @@ body:not(.native-scrollbars) ::-webkit-scrollbar .museifu-banner {
   height: 0px;
 }
 
+.museifu-banner.markdown-source-view.is-live-preview ::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
 body:not(.native-scrollbars) .museifu-banner {
   scrollbar-width: none;
 }
@@ -436,10 +439,105 @@ body:not(.native-scrollbars) .museifu-banner {
   -ms-overflow-style: none;
 }
 
-/* hide banner when editing */
+/* hide banner when editing
+
 .markdown-source-view.is-live-preview img[alt*="museifu-banner"] {
   opacity: 0;
 }
+
+if you want to see the banner while editing, comment or delete the code below this comment
+
+*/
+
+.museifu-banner.markdown-source-view.is-live-preview .inline-title {
+  padding-top: 200px;
+}
+
+
+
+
+
+
+
+
+/* bullet point customization
+
+got this code from the obsidian forum, in a post "rmdelatorre" made
+link: https://forum.obsidian.md/t/style-bullets-in-lists-by-level/46152
+
+temporary until I find a better way to do it
+
+*/
+
+
+.markdown-source-view .HyperMD-list-line-1 .list-bullet:after {
+/* Bullet */
+	height: 5px;
+	width: 5px;
+	border-radius: 50%;
+	background-color: var(--bullet-point-color);
+} 
+
+.HyperMD-list-line-2 .list-bullet:after {
+/* Dash */
+	height: 1px;
+	width: 7px;
+	border-radius: 0%;
+	background-color: var(--bullet-point-color);
+} 
+
+.HyperMD-list-line-3 .list-bullet:after {
+/* Hollow Bullet */
+	height: 4px;
+	width: 4px;
+	background-color: Transparent;
+	border-color: var(--bullet-point-color);
+	border-style: solid;
+	border-radius: 50%;
+	border-width: 1px;
+} 
+
+.markdown-source-view.mod-cm6 .HyperMD-list-line-4 .list-bullet:after {
+/* Solid Square */
+	height: 5px;
+	width: 5px;
+	border-radius: 0%;
+	background-color: var(--bullet-point-color);
+} 
+
+.markdown-source-view.mod-cm6 .HyperMD-list-line-5 .list-bullet:after {
+/* Dash */
+	height: 1px;
+	width: 7px;
+	border-radius: 0%;
+	background-color: var(--bullet-point-color);
+} 
+
+.markdown-source-view.mod-cm6 .HyperMD-list-line-6 .list-bullet:after {
+/* Hollow Square */
+	height: 4px;
+	width: 4px;
+	background-color: Transparent;
+	border-color: var(--bullet-point-color);
+	border-style: solid;
+	border-radius: 0%;
+	border-width: 1px;
+} 
+
+.markdown-source-view.mod-cm6 .HyperMD-list-line-7 .list-bullet:after {
+/* Small Bullet */
+	height: 2px;
+	width: 2px;
+	border-radius: 50%;
+	background-color: var(--bullet-point-color);
+}
+
+
+
+
+
+
+
 
 /* kanban customization */
 
